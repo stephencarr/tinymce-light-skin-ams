@@ -1,0 +1,44 @@
+# TinyMCE Light Skin
+
+![Build status for master branch](https://travis-ci.org/instructure/tinymce-light-skin.svg?branch=master)
+
+This is a version of the [Pixabay's Light TinyMCE Skin][1] packaged with all
+static assets in the JavaScript. This makes it easier to inlcude in modules
+that wrap TinyMCE without requiring consumers to serve the skin assets.
+
+## Modifications
+
+Some slight modifications to the original skin have been made:
+
+  - IE7 specific CSS has been removed
+  - WOFF is the only font format used
+  - CSS changes for better keyboard navigation
+  - Remove font sizes from content CSS to avoid conflicting with app specific
+    content CSS.
+
+This makes the bundle smaller and still provides good support for modern
+browsers.
+
+## Usage
+
+```javascript
+import skin from 'tinymce-light-skin'
+
+// append styles to head
+skin.use()
+
+// when initializing TinyMCE set skin to false
+tinymce.init({ skin: false })
+
+// optionaly remove styles from head based on reference count
+skin.unuse()
+
+// inject content styles into the editor's iframe
+tinymce.init({ content_style: skin.contentStyle })
+
+// inline variants
+skin.useInline()
+skin.unuseInline()
+```
+
+[1]: https://pixabay.com/en/blog/posts/a-modern-custom-theme-for-tinymce-4-40/

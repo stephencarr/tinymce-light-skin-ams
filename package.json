@@ -1,0 +1,44 @@
+{
+  "name": "tinymce-light-skin-ams",
+  "version": "1.0.0",
+  "description": "Hard Fork from Pixabay's Light TinyMCE skin with all assets bundled in the JS.",
+  "main": "lib/skin.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "npm run build && eslint lib && mocha 'test/**/*.js'",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "tinymce",
+    "theme",
+    "skin"
+  ],
+  "author": "Stephen Carr",
+  "license": "MIT",
+  "devDependencies": {
+    "base64-font-loader": "0.0.4",
+    "css-loader": "^0.28.11",
+    "eslint": "^3.19.0",
+    "jsdom": "^9.10.0",
+    "mocha": "^3.2.0",
+    "mocha-jsdom": "^1.1.0",
+    "style-loader": "^0.17.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "registry": "http://172.20.198.71:8081/repository/npmjs-all/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephencarr/tinymce-light-skin-ams.git"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": false
+    }
+  }
+}
